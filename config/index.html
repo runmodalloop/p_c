@@ -21,29 +21,50 @@
     <h1 class='title'>Simple Clock Configuration</h1>
 
     <div class='item-container'>
+      <div class='item-container-content'>
+        <div class='item'>
+          Pebble에서 제공하는 기본 날씨로 매우 낭패를 보고, 기상청 동네 예보를 사용하는 Watchface를 만들었습니다.
+          아무리 구라청이라도... 한국 날씨는 기상청이 더 나은 듯 합니다.
+        </div>
+      </div>
+    </div>
+
+    <div class='item-container'>
       <div class='item-container-header'>Color</div>
       <div class='item-container-content'>
         <label class='item'>
-          Background Color
-          <input id='background_color_picker' type='text' class='item-color item-color-sunny' value='#000000'>
+          Background Color(bluetooth O)
+          <input id='background_color' type='text' class='item-color item-color-sunny' value='#000000'>
         </label>
         <label class='item'>
-          Background Color(bluetooth x)
-          <input id='background_color_picker' type='text' class='item-color item-color-sunny' value='#000000'>
+          Background Color(bluetooth X)
+          <input id='background_color_blue' type='text' class='item-color item-color-sunny' value='#ff0000'>
+        </label>
+        <label class='item'>
+          Time Color
+          <input id='time_color' type='text' class='item-color item-color-sunny' value='#ffffff'>
+        </label>
+        <label class='item'>
+          Weather Color
+          <input id='weather_color' type='text' class='item-color item-color-sunny' value='#ffffff'>
+        </label>
+        <label class='item'>
+          Bottom Text Color
+          <input id='bottom_color' type='text' class='item-color item-color-sunny' value='#545454'>
         </label>
       </div>
     </div>
 
     <div class='item-container'>
-      <div class='item-container-header'>Accessibility</div>
+      <div class='item-container-header'>Language</div>
       <div class='item-container-content'>
         <label class='item'>
-          High Contrast Mode
-          <input id='high_contrast_checkbox' type='checkbox' class='item-toggle'>
+          Korean
+          <input id='korean_checkbox' type='checkbox' class='item-toggle'>
         </label>
       </div>
       <div class='item-container-footer'>
-        This switches the app colors to a higher contrast set that promotes readability in low light.
+        동네예보 중 날씨를 한글로 표시 합니다.
       </div>
     </div>
 
@@ -55,17 +76,29 @@
   </body>
   <script>
   function getConfigData() {
-    var backgroundColorPicker = document.getElementById('background_color_picker');
-    var highContrastCheckbox = document.getElementById('high_contrast_checkbox');
+    var background_color = document.getElementById('background_color');
+    var background_color_blue = document.getElementById('background_color_blue');
+    var time_color = document.getElementById('time_color');
+    var weather_color = document.getElementById('weather_color');
+    var bottom_color = document.getElementById('bottom_color');
+    var korean_checkbox = document.getElementById('korean_checkbox');
  
     var options = {
       'background_color': backgroundColorPicker.value,
-      'high_contrast': highContrastCheckbox.checked
+      'background_color_blue': background_color_blue.value,
+      'time_color': time_color.value,
+      'weather_color': weather_color.value,
+      'bottom_color': bottom_color.value,
+      'korean_checkbox': korean_checkbox.checked
     };
 
     // Save for next launch
     localStorage['background_color'] = options['background_color'];
-    localStorage['high_contrast'] = options['high_contrast'];
+    localStorage['background_color_blue'] = options['background_color_blue'];
+    localStorage['time_color'] = options['time_color'];
+    localStorage['weather_color'] = options['weather_color'];
+    localStorage['bottom_color'] = options['bottom_color'];
+    localStorage['korean_checkbox'] = options['korean_checkbox'];
 
     console.log('Got options: ' + JSON.stringify(options));
     return options;
@@ -94,13 +127,11 @@
 
   (function() {
     var backgroundColorPicker = document.getElementById('background_color_picker');
-    var highContrastCheckbox = document.getElementById('high_contrast_checkbox');
-
-    // Load any previously saved configuration, if available
-    if(localStorage['high_contrast']) {
-      highContrastCheckbox.checked = JSON.parse(localStorage['high_contrast']);
-      backgroundColorPicker.value = localStorage['background_color'];
-    }
+    var background_color_blue = document.getElementById('background_color_blue');
+    var time_color = document.getElementById('time_color');
+    var weather_color = document.getElementById('weather_color');
+    var bottom_color = document.getElementById('bottom_color');
+    var korean_checkbox = document.getElementById('korean_checkbox');
   })();
   </script>
 </html>
