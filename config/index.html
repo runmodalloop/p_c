@@ -126,12 +126,15 @@
   });
 
   (function() {
-    var backgroundColorPicker = document.getElementById('background_color_picker');
-    var background_color_blue = document.getElementById('background_color_blue');
-    var time_color = document.getElementById('time_color');
-    var weather_color = document.getElementById('weather_color');
-    var bottom_color = document.getElementById('bottom_color');
-    var korean_checkbox = document.getElementById('korean_checkbox');
+    var background_color = document.getElementById('background_color');
+    var highContrastCheckbox = document.getElementById('high_contrast_checkbox');
+ 
+    // Load any previously saved configuration, if available
+    if(localStorage['high_contrast']) {
+      highContrastCheckbox.checked = JSON.parse(localStorage['high_contrast']);
+      korean_checkbox.value = localStorage['korean_checkbox'];
+    }
   })();
+
   </script>
 </html>
