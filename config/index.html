@@ -34,23 +34,23 @@
       <div class='item-container-content'>
         <label class='item'>
           Background Color(bluetooth O)
-          <input id='background_color' type='text' class='item-color item-color-sunny' value='#000000'>
+          <input id='background_color' type='text' class='item-color item-color-normal' value='#000000'>
         </label>
         <label class='item'>
           Background Color(bluetooth X)
-          <input id='background_color_blue' type='text' class='item-color item-color-sunny' value='#ff0000'>
+          <input id='background_color_blue' type='text' class='item-color item-color-normal' value='#ff0000'>
         </label>
         <label class='item'>
           Time Color
-          <input id='time_color' type='text' class='item-color item-color-sunny' value='#ffffff'>
+          <input id='time_color' type='text' class='item-color item-color-normal' value='#ffffff'>
         </label>
         <label class='item'>
           Weather Color
-          <input id='weather_color' type='text' class='item-color item-color-sunny' value='#ffffff'>
+          <input id='weather_color' type='text' class='item-color item-color-normal' value='#ffffff'>
         </label>
         <label class='item'>
           Bottom Text Color
-          <input id='bottom_color' type='text' class='item-color item-color-sunny' value='#545454'>
+          <input id='bottom_color' type='text' class='item-color item-color-normal' value='#545454'>
         </label>
       </div>
     </div>
@@ -127,6 +127,10 @@
 
   (function() {
     var background_color = document.getElementById('background_color');
+    var background_color_blue = document.getElementById('background_color_blue');
+    var time_color = document.getElementById('time_color');
+    var weather_color = document.getElementById('weather_color');
+    var bottom_color = document.getElementById('bottom_color');
     var korean_checkbox = document.getElementById('korean_checkbox');
  
     // Load any previously saved configuration, if available
