@@ -15,6 +15,13 @@
       else
         return results[1];
     }
+    onload = function(){
+      document.getElementById('background_color').value = getParam(0);
+      document.getElementById('background_color_blue') = getParam(1);
+      document.getElementById('time_color') = getParam(2);
+      document.getElementById('weather_color') = getParam(3);
+      document.getElementById('bottom_color') = getParam(4);
+    }
   </script>
   <style>
   .title {
