@@ -4,25 +4,6 @@
   <title>Simple Clock Configuration</title>
   <link rel='stylesheet' type='text/css' href='css/slate.min.css'>
   <script src='js/slate.min.js'></script>
-  <script type='text/javascript'>
-    function getMyV( name ){
-      name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
-      var regexS = "[\\?&]"+name+"=([^&#]*)";
-      var regex = new RegExp( regexS );
-      var results = regex.exec( window.location.href );
-      if( results == null )
-        return "";
-      else
-        return results[1];
-    }
-    onload = function(){
-      document.getElementById('background_color_blue').value = getMyV('1');
-      document.getElementById('time_color').value = getMyV('2');
-      var aa = getMyV('3');
-      document.getElementById('weather_color').value = aa;
-      document.getElementById('bottom_color').value = getMyV('4');
-    }
-  </script>
   <style>
   .title {
     padding: 15px 10px;
@@ -37,13 +18,11 @@
   </head>
 
   <body>
-    <h1 class='title'>Simple Clock Configuration 8</h1>
+    <h1 class='title'>Simple Clock Configuration</h1>
     <div class='item-container'>
       <div class='item-container-content'>
         <div class='item'>
-          Pebble에서 제공하는 기본 날씨로 매우 낭패를 본 적이 있습니다.<br>
-          이 후, 기상청 동네 예보를 사용하는 Watchface를 만들었습니다.<br>
-          아무리 구라청이라도... 한국 날씨는 기상청이 더 나은 듯 합니다.<br>
+          기상청 동네 예보를 사용합니다.<br>
           동네 예보 위치는 핸드폰의 GPS 위치를 기준으로 합니다.
         </div>
       </div>
@@ -53,7 +32,7 @@
       <div class='item-container-content'>
         <label class='item'>
           Background Color(bluetooth O)
-          <input id='background_color' type='text' class='item-color item-color-normal' value="getMyV(0)">
+          <input id='background_color' type='text' class='item-color item-color-normal' value='0x000000'>
         </label>
         <label class='item'>
           Background Color(bluetooth X)
@@ -61,15 +40,15 @@
         </label>
         <label class='item'>
           Time Color
-          <input id='time_color' type='text' class='item-color item-color-normal' >
+          <input id='time_color' type='text' class='item-color item-color-normal' value='0xFFFFFF'>
         </label>
         <label class='item'>
           Weather Color
-          <input id='weather_color' type='text' class='item-color item-color-normal' >
+          <input id='weather_color' type='text' class='item-color item-color-normal' value='0xFFFFFF'>
         </label>
         <label class='item'>
           Bottom Text Color
-          <input id='bottom_color' type='text' class='item-color item-color-normal' >
+          <input id='bottom_color' type='text' class='item-color item-color-normal' value='0xAAAAAA'>
         </label>
       </div>
     </div>
