@@ -6,7 +6,7 @@
   <script src='js/slate.min.js'></script>
   <script type='text/javascript'>
     function getMyV( name ){
-      alert('hrulll');
+      alert(name);
       name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
       var regexS = "[\\?&]"+name+"=([^&#]*)";
       var regex = new RegExp( regexS );
@@ -18,7 +18,7 @@
         return results[1];
     }
     onload = function(){
-      alert("onload 2");
+      alert("onload 3");
       document.getElementById('background_color_blue').value = getMyV('1');
       document.getElementById('time_color').value = getMyV(2);
       document.getElementById('weather_color').value = getMyV(3);
