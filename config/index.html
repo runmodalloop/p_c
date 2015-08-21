@@ -3,7 +3,8 @@
   <head>
   <title>Simple Clock Configuration</title>
   <link rel='stylesheet' type='text/css' href='css/slate.min.css'>
-  <script src='js/slate.min.js'>
+  <script src='js/slate.min.js'></script>
+  <javascript >
     function getParam( name ){
       name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
       var regexS = "[\\?&]"+name+"=([^&#]*)";
@@ -17,13 +18,12 @@
     }
     onload = function(){
       alert("onload");
-      document.getElementById('background_color').value = getParam(0);
       document.getElementById('background_color_blue') = getParam(1);
       document.getElementById('time_color') = getParam(2);
       document.getElementById('weather_color') = getParam(3);
       document.getElementById('bottom_color') = getParam(4);
     }
-  </script>
+  </javascript>
   <style>
   .title {
     padding: 15px 10px;
