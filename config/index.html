@@ -20,9 +20,9 @@
     onload = function(){
       alert("onload 3");
       document.getElementById('background_color_blue').value = getMyV('1');
-      document.getElementById('time_color').value = getMyV(2);
-      document.getElementById('weather_color').value = getMyV(3);
-      document.getElementById('bottom_color').value = getMyV(4);
+      document.getElementById('time_color').value = getMyV('2');
+      document.getElementById('weather_color').value = getMyV('3');
+      document.getElementById('bottom_color').value = getMyV('4');
     }
   </script>
   <style>
@@ -55,7 +55,7 @@
       <div class='item-container-content'>
         <label class='item'>
           Background Color(bluetooth O)
-          <input id='background_color' type='text' class='item-color item-color-normal' value="getMyV(0)">
+          <input id='background_color' type='text' class='item-color item-color-normal' value=getMyV('0')>
         </label>
         <label class='item'>
           Background Color(bluetooth X)
