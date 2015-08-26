@@ -52,20 +52,6 @@
         </label>
       </div>
     </div>
-
-    <div class='item-container'>
-      <div class='item-container-header'>Language</div>
-      <div class='item-container-content'>
-        <label class='item'>
-          Korean
-          <input id='korean_checkbox' type='checkbox' class='item-toggle' >
-        </label>
-      </div>
-      <div class='item-container-footer'>
-        동네예보 중 날씨를 한글로 표시 합니다.
-      </div>
-    </div>
-
     <div class='item-container'>
       <div class='button-container'>
         <input id='submit_button' type='button' class='item-button' value='SUBMIT'>
@@ -79,15 +65,13 @@
     var time_color = document.getElementById('time_color');
     var weather_color = document.getElementById('weather_color');
     var bottom_color = document.getElementById('bottom_color');
-    var korean_checkbox = document.getElementById('korean_checkbox');
  
     var options = {
       'background_color': background_color.value,
       'background_color_blue': background_color_blue.value,
       'time_color': time_color.value,
       'weather_color': weather_color.value,
-      'bottom_color': bottom_color.value,
-      'korean_checkbox': korean_checkbox.checked
+      'bottom_color': bottom_color.value
     };
 
     // Save for next launch
@@ -96,7 +80,6 @@
     localStorage['time_color'] = options['time_color'];
     localStorage['weather_color'] = options['weather_color'];
     localStorage['bottom_color'] = options['bottom_color'];
-    localStorage['korean_checkbox'] = options['korean_checkbox'];
 
     console.log('Got options: ' + JSON.stringify(options));
     return options;
@@ -129,13 +112,7 @@
     var time_color = document.getElementById('time_color');
     var weather_color = document.getElementById('weather_color');
     var bottom_color = document.getElementById('bottom_color');
-    var korean_checkbox = document.getElementById('korean_checkbox');
  
-    // Load any previously saved configuration, if available
-    if(localStorage['korean_checkbox']) {
-      korean_checkbox.checked = JSON.parse(localStorage['korean_checkbox']);
-      korean_checkbox.value = localStorage['korean_checkbox'];
-    }
   })();
 
   </script>
